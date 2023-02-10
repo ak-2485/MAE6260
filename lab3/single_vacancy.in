@@ -1,0 +1,42 @@
+&control
+	calculation = 'relax'
+	restart_mode = 'from_scratch'
+	prefix = 'Si8'
+	tstress = .true.
+	tprnfor = .true.
+	pseudo_dir = './'
+/
+
+&system
+	ibrav = 0,
+	nat = 7, ntyp = 1,
+	ecutwfc = 20
+/
+
+&electrons
+	conv_thr = 1.0d-8
+	mixing_beta = 0.7
+/
+
+&ions
+	ion_dynamics = 'bfgs'
+/
+
+ATOMIC_SPECIES
+Si 28.086 Si.pbe-rrkj.UPF
+ATOMIC_POSITIONS (angstrom)
+Si      2.7339940480     2.7339940480     0.0000000000
+Si      0.0000000000     0.0000000000     0.0000000000
+Si      2.7339940480     0.0000000000     2.7339940480
+Si      0.0000000000     2.7339940480     2.7339940480
+Si      4.1009910720     4.1009910720     1.3669970240
+Si      1.3669970240     1.3669970240     1.3669970240
+Si      4.1009910720     1.3669970240     4.1009910720
+CELL_PARAMETERS (angstrom)
+5.4679880960    0.0000000000    0.0000000000
+0.0000000000    5.4679880960    0.0000000000
+0.0000000000    0.0000000000    5.4679880960
+K_POINTS (automatic)
+6 6 6 1 1 1
+
+
